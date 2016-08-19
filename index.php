@@ -1,1 +1,1 @@
-<?php inlude_once('home.html'); >?
+<?php inlude_once('home.html'); ?>
