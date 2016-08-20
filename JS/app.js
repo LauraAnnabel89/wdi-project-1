@@ -6,8 +6,6 @@
 //   - need to add a button and an event listener function that says when the game starts, start to animate the div TODAY DONE
 //The balloons start moving randomly over the page 
 //  - need to add an event listener to the individual divs then do a for loop, iterating over two or three arrays with math random so they generate different movement accross the page, potentially interval, direction accross the div (need to research animations!) TODAY DONE
-
-
 // The Balloons will be clickable earning you ten points a time, when you click the balloon makes a popping noise, disappears and the score is stores
 //   - Add a hide event when clicked to the div and store the value of this within the playerScores array, push the player scores array to the DIV with player scores
 //When the balloons disappear over the top of the screen the game is over!
@@ -20,35 +18,53 @@ var speeds = [100,50,20,250];
 
 $(start);
 
+alert("Welcome to the game, you lil' heartbreaker! Enter your name to begin...");
+
 function start() {
   createBalloon();
-    setInterval(function() {
-    createBalloon();
+  setInterval(function() {
+  createBalloon();
+  startGame();
+  balloonClick();
+  enterName();
   }, 5000);
 
-
-function createBalloon() {
-  var balloon = "<div class='Balloon'></div>"
-  $('.Game-Space').prepend(balloon);
-  animateBalloon($('.Balloon'))
+  function enterName () {
+  $("button").click(function() {
+    var $playerName = $("input[name=playerName]").val();
+    $("#playerNameDisplay").append($playerName);
+  })
 }
 
-function animateBalloon(balloon) {
+  function startGame () {
+  $("button").click(function() {
+    var $playerName = $("input[name=playerName]").val();
+    $("#playerNameDisplay").append($playerName);
+  })
+}
+  function createBalloon() {
+    var balloon = "<div class='Balloon'></div>"
+    $('.Game-Space').prepend(balloon);
+    animateBalloon($('.Balloon'))
+  }
+
+  function animateBalloon(balloon) {
   // call random number from speeds array
   var speed = speeds[Math.floor(Math.random()*speeds.length)];
 
   setInterval(function() {
     balloon.animate({bottom: '+=10px'})
     balloon.animate({left: '+=10px'})
-  }, speed)
+  }, speed);
+
+  function balloonClick() {
+    $("div").click()
+    createBalloon();
+    return console.log("I've been clicked");
+  }
+};
 }
 
-function balloonClick() {
-  $(".Game-Space").click()
-  console.log("I've been clicked")
-}
-
-}
 
 
 
