@@ -1,3 +1,22 @@
 body {
-  background: green;
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+}
+.Balloon {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  position: absolute;
+  bottom: 0;
+}
+
+.Game-Space {
+  position: relative;
+  height: 1000px;
+  width: 1000px;
+  background-color: #F2F2F2;
+  margin: 0 auto;
 }
