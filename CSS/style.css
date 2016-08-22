@@ -12,12 +12,14 @@ table {
   position: absolute;
   background-image: url("../Images/Balloon.jpg");
   background-size: cover;
+  bottom: 0;
 }
 
 .Game-Space {
   position: relative;
-  height: 1000px;
-  width: 1000px;
+  height: 500px;
+  width: 500px;
   background-color: white;
   margin: 0 auto;
+  overflow: hidden;
 }
