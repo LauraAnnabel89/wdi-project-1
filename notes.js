@@ -1,3 +1,80 @@
+var speeds = [400,300,500,400];
+var widths = [10, 200, 300, 75];
+var playerScore = 0;
+var $playerName = "";
+var $gameSpaceHeight = $(".Game-Space").height.val
+var $balloonHeight = $(".Balloon").height.val
+var $width = $(".Game-Space").width.val
+
+$(start);
+
+alert("Welcome to the game, you lil' heartbreaker! Enter your name and click start!");
+
+function start() {
+ $("button").click(startGame)
+}
+
+function enterName(startGame) {
+  $("button").click()
+  var $playerName = $("input[name=playerName]").val();
+  $("#playerNameDisplay").append($playerName);
+}
+
+function startGame(createBalloon) {
+  setInterval(function() {
+    createBalloon();
+    balloonClick();
+  }, 5000);
+}
+
+function balloonClick() {
+  $(".Balloon").click(function() {
+    $(this).remove();
+      // $(".Balloon").effect('explode'); 
+      var $playerScore
+      ++ playerScore;
+      $("#playerCurrentScore").html(playerScore);
+      new Audio("/JS/Pop.wav").play()
+    })
+}
+
+function stopGame () {
+ if (balloonHeight > gameSpaceHeight) { 
+  function endGame() {
+    $(".Balloon").fadeOut(50);
+    playerScore = 0;
+    alert(playerName, playerScore)
+  }
+}
+
+function createBalloon(startGame) {
+  var balloon = "<div class='Balloon'></div>"
+  $('.Game-Space').prepend(balloon);
+  animateBalloon($('.Balloon'))
+}
+
+function animateBalloon(balloon) {
+  var speed = speeds[Math.floor(Math.random()*speeds.length)]; 
+}
+setInterval(function() {      
+  balloon.animate({bottom: '+=10px'})
+  balloon.animate({left: '+=10px'})
+},speed);
+}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //****Still Need To Do*****
 
 // Randomise Animations
@@ -6,6 +83,10 @@
 // Ensure explode function isnt crashing anymore
 // Styling
 // Refactor Code
+
+// function startingPoint() {
+//   var $width = widths[Math.floor(Math.random()*widths.length)];
+// }
 
 
 // Player opens the game and is alerted to enter their name 

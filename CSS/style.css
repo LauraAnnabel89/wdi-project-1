@@ -1,6 +1,15 @@
 body {
   text-align: center;
-  
+  background-image: url("../Concrete.jpg");
+  background-size: cover;
+}
+
+img {
+ margin-left: 210px;
+ margin-top: 90px;
+ height: 500px;
+ float: left;
+ padding: 0;
 }
 
 table {
@@ -10,21 +19,16 @@ table {
   height: 200px;
   width: 200px;
   position: absolute;
-  background-image: url("../Heart.png");
+  background-image: url("../Hearts.png");
   background-size: 200px 200px;
   background-repeat: no-repeat;
   bottom: 0;
 }
 
-.Balloon:hover {
-  transform: scale(1.2);
-}
-
 .Game-Space {
-  position: relative;
-  height: 500px;
-  width: 500px;
-  background-color: white;
-  margin: 0 auto;
-  overflow: hidden;
+ height: 600px;
+ width: 800px;
+ margin-left: 201px;
+ bottom: 0;
+ overflow: hidden;
 }

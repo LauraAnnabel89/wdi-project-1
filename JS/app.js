@@ -23,15 +23,13 @@ function startGame() {
   createBalloon();
   setInterval(function() {
     createBalloon();
-    startGame();
     balloonClick();
-  }, 5000);
+  }, 4000);
 
 
   function balloonClick() {
     $(".Balloon").click(function() {
       $(this).remove();
-      // $(".Balloon").effect('explode'); 
       var $playerScore
       ++ playerScore;
       $("#playerCurrentScore").html(playerScore);
@@ -58,8 +56,8 @@ function animateBalloon(balloon) {
   var speed = speeds[Math.floor(Math.random()*speeds.length)];   
 
   setInterval(function() {
-    balloon.animate({bottom: '+=10px'})
-    balloon.animate({left: '+=10px'})
+    balloon.animate({bottom: '+=20px'})
+    balloon.animate({left: '+=40px'})
   }, speed);
 }   
 function startingPoint() {
@@ -67,6 +65,10 @@ function startingPoint() {
 }
 
 }
+
+
+
+
 
 
 
