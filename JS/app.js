@@ -1,9 +1,9 @@
 var speeds = [400,300,500,400];
-var width = [50, 50, 100, 0, 50];
+var widths = [10, 200, 300, 75];
 var playerScore = 0;
-var startingPoint = $(".Game-Space").width 
-var gameSpaceHeight = $(".Game-Space").height.val
-var balloonHeight = $(".Balloon").height.val
+var $gameSpaceHeight = $(".Game-Space").height.val
+var $balloonHeight = $(".Balloon").height.val
+var $width = $(".Game-Space").width.val
 
 $(start);
 
@@ -20,31 +20,33 @@ function enterName(startGame) {
 }
 
 function startGame() {
-    createBalloon();
-    setInterval(function() {
+  createBalloon();
+  setInterval(function() {
     createBalloon();
     startGame();
     balloonClick();
-  }, 4000);
+  }, 5000);
 
 
-function balloonClick() {
+  function balloonClick() {
     $(".Balloon").click(function() {
       $(this).remove();
       // $(".Balloon").effect('explode'); 
       var $playerScore
       ++ playerScore;
       $("#playerCurrentScore").html(playerScore);
+      new Audio("/JS/Pop.wav").play()
     })
-
   }
 
-function stopGame () {
+  function stopGame () {
    if (balloonHeight > gameSpaceHeight) {
-    // return $start
-   }
+    function exitGame () {
+      alert("Game Over")
+      playerScore = 0;
+    }
+  }
 };
-
 
 function createBalloon() {
   var balloon = "<div class='Balloon'></div>"
@@ -52,19 +54,19 @@ function createBalloon() {
   animateBalloon($('.Balloon'))
 }
 
-
 function animateBalloon(balloon) {
   var speed = speeds[Math.floor(Math.random()*speeds.length)];   
 
   setInterval(function() {
-    balloon.animate({bottom: '+=30px'})
-    balloon.animate({left: '+=30px'})
+    balloon.animate({bottom: '+=10px'})
+    balloon.animate({left: '+=10px'})
   }, speed);
 }   
-
+function startingPoint() {
+  var $width = widths[Math.floor(Math.random()*widths.length)];
 }
 
-
+}
 
 
 

@@ -1,20 +1,23 @@
 body {
   text-align: center;
+  
 }
 
 table {
   margin: 0 auto;
 }
 .Balloon {
-  height: 150px;
-  width: 150px;
-  background-color: red;
+  height: 200px;
+  width: 200px;
   position: absolute;
-  background-image: url("../Images/Balloon.jpg");
-  background-size: cover;
+  background-image: url("../Heart.png");
+  background-size: 200px 200px;
+  background-repeat: no-repeat;
   bottom: 0;
-  right: 100;
+}
 
+.Balloon:hover {
+  transform: scale(1.2);
 }
 
 .Game-Space {
