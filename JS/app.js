@@ -47,20 +47,16 @@ function startGame() {
 
 function createBalloon() {
   var randPosition = Math.floor(Math.random() * (440 - 0 + 1) + 0);
-
   $('<div class="Balloon"></div>')
   .appendTo('.Game-Space')
   .css('left', randPosition + "px")
-
   animateBalloon($('.Balloon'))
 }
 
 function animateBalloon(balloon) {
   var speed = speeds[Math.floor(Math.random()*speeds.length)];   
-
   setInterval(function() {
     balloon.animate({bottom: '+=20px'})
-
   }, 100);
 
   setInterval(function() {
@@ -74,20 +70,36 @@ function checkForEndGame(balloon) {
   var topInt = parseInt($(balloon).css('top'), 10);
 
   if (topInt === 0) {
-      alert("Game-Over");
-      playerScore = 0
-      console.log(playerScore)
+      // alert("Game-Over");
+      // playerScore = 0
+    console.log(playerScore)
 
-  } 
+    } 
+// if topInt is below 0px --> Game over
+if (topInt < 0) {
+ alert("Game Over");    
+}
+}
+function increaseSpeed () {
+  var playerScore = 0;
+  var $balloonSpeed = $(".Balloon").animate({bottom: '+=20px'})
 
- // if topInt is below 0px --> Game over
+  switch (balloonSpeed) { 
+    case (playerScore > 1): 
+    $balloonSpeed * 10
+    break; 
+    case (playerScore > 20): 
+    $(".Balloon").animate({bottom: '+=60px'})
+    break; 
+    case (playerScore > 30): 
+    $(".Balloon").animate({bottom: '+=80px'})
+    break; 
+    case (playerScore > 40): 
+    $(".Balloon").animate({bottom: '+=100px'})
+  }
+}
 }
 
-function startingPoint() {
-  var $width = widths[Math.floor(Math.random()*widths.length)];
-}
-
-}
 
 
 
