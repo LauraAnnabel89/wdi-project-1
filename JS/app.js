@@ -14,7 +14,10 @@
 //  -- alert boxes, though research how to push these to the screen or modifiy the alert box
 
 
-var speeds = [100,50,20,250];
+var speeds = [100,300,500,600];
+var width = [50, 50, 100, 0, 50];
+var playerScore = 0;
+var startingPoint = $(".Game-Space").width() - 50;
 
 $(start);
 
@@ -23,47 +26,57 @@ alert("Welcome to the game, you lil' heartbreaker! Enter your name to begin...")
 function start() {
   createBalloon();
   setInterval(function() {
-  createBalloon();
-  startGame();
-  balloonClick();
-  enterName();
-  }, 5000);
+    createBalloon();
+    startGame();
+    balloonClick();
+    enterName();
+  }, 7000);
 
+  function balloonClick() {
+    $(".Game-Space").click(function() {
+      $(".Balloon").effect('explode'); 
+      var $playerScore
+      ++ playerScore;
+      $("#playerCurrentScore").html(playerScore);
+ //     $("#burst").play();
+    })
+
+  }
   function enterName () {
-  $("button").click(function() {
-    var $playerName = $("input[name=playerName]").val();
-    $("#playerNameDisplay").append($playerName);
-  })
-}
+    $("button").click(function() {
+      var $playerName = $("input[name=playerName]").val();
+      $("#playerNameDisplay").append($playerName);
+    })
+  }
 
   function startGame () {
-  $("button").click(function() {
-    var $playerName = $("input[name=playerName]").val();
-    $("#playerNameDisplay").append($playerName);
-  })
+     $("button").click(function() {
+    })
+  }
+
+function stopGame (balloon, GameSpace) {
+  $(".Balloon")
+      
+  }
 }
+
   function createBalloon() {
     var balloon = "<div class='Balloon'></div>"
     $('.Game-Space').prepend(balloon);
     animateBalloon($('.Balloon'))
   }
 
-  function animateBalloon(balloon) {
+
+function animateBalloon(balloon) {
   // call random number from speeds array
-  var speed = speeds[Math.floor(Math.random()*speeds.length)];
+  var speed = speeds[Math.floor(Math.random()*speeds.length)];   
+  // var width = Math.floor(Math.random() * width.length);
 
   setInterval(function() {
     balloon.animate({bottom: '+=10px'})
     balloon.animate({left: '+=10px'})
-  }, speed);
-
-  function balloonClick() {
-    $("div").click()
-    createBalloon();
-    return console.log("I've been clicked");
-  }
-};
-}
+  }, speed, width);
+}   
 
 
 
@@ -79,25 +92,6 @@ function start() {
 
 
 
-
-
-
-
-
-//   alert("Welcome to the game, you lil' heartbreaker! Enter your name to begin...");
-
-// //enter your name and submit
-// $("button").click(function() {
-//   var $playerName = $("input[name=playerName]").val();
-//   $("#playerNameDisplay").append($playerName);
-// })
-
-
-// $('.Balloon').click(function() {
-//   // return console.log("clickity-click-click")
-//   $('.Balloon').animate({top: '+=400px'},500)
-// })
-// })
 
 
 

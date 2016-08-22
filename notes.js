@@ -1,3 +1,61 @@
+//****Still Need To Do*****
+
+// Randomise Animations
+// Get game to exit out once balloon reaches top of the div
+// Add audio files
+// Ensure explode function isnt crashing anymore
+// Styling
+// Refactor Code
+
+
+
+
+
+
+
+var $paragraph = $("p");
+$("#one").after($paragraph);
+$("#one").after("<p>Yay! Paragraphs!</p>");
+
+
+
+
+
+//   alert("Welcome to the game, you lil' heartbreaker! Enter your name to begin...");
+
+// //enter your name and submit
+// $("button").click(function() {
+//   var $playerName = $("input[name=playerName]").val();
+//   $("#playerNameDisplay").append($playerName);
+// })
+
+
+// $('.Balloon').click(function() {
+//   // return console.log("clickity-click-click")
+//   $('.Balloon').animate({top: '+=400px'},500)
+// })
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //IDEA//
 //A game similar to the bubble wrap pop game but based around banksy's girl with the red balloon
 //The goal is to pop as many hearts as possible within forty five seconds
@@ -46,6 +104,27 @@
 // var playerScore;
 // var gameResult = {};
 // var highscoreList = [];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 console.log("hello")
 

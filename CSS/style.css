@@ -6,17 +6,18 @@ table {
   margin: 0 auto;
 }
 .Balloon {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   background-color: red;
   position: absolute;
-  bottom: 0;
+  background-image: url("../Images/Balloon.jpg");
+  background-size: cover;
 }
 
 .Game-Space {
   position: relative;
   height: 1000px;
   width: 1000px;
-  background-color: #F2F2F2;
+  background-color: white;
   margin: 0 auto;
 }
