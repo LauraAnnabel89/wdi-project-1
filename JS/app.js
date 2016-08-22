@@ -1,4 +1,4 @@
-var speeds = [100,300,200,400];
+var speeds = [400,300,500,400];
 var width = [50, 50, 100, 0, 50];
 var playerScore = 0;
 var startingPoint = $(".Game-Space").width 
@@ -10,17 +10,17 @@ $(start);
 alert("Welcome to the game, you lil' heartbreaker! Enter your name to begin...");
 
 function start() {
-  createBalloon();
-  setInterval(function() {
+    createBalloon();
+    setInterval(function() {
     createBalloon();
     startGame();
     balloonClick();
     enterName();
-  }, 7000);
+  }, 4000);
 
-  function balloonClick() {
+function balloonClick() {
     $(".Balloon").click(function() {
-      $(".Balloon").fadeOut(0);
+      $(this).remove();
       // $(".Balloon").effect('explode'); 
       var $playerScore
       ++ playerScore;
@@ -28,21 +28,25 @@ function start() {
     })
 
   }
-  function enterName () {
+function enterName () {
     $("button").click(function() {
       var $playerName = $("input[name=playerName]").val();
       $("#playerNameDisplay").append($playerName);
     })
   }
 
-  function startGame () {
+function startGame () {
    $("button").click(function() {
+    if $("button").on (start() {
+    else if ("")
+    })
    })
 
 
-   function stopGame (balloon, GameSpace) {
+function stopGame (balloon, GameSpace) {
     if (balloonHeight > gameSpaceHeight) ;
-     $('.Balloon').finish(startgame===false) 
+     $(".Game-Space").remove;
+      alert(playerScore);
      };  
     }
 
