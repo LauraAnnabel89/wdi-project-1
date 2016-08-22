@@ -13,6 +13,8 @@ table {
   background-image: url("../Images/Balloon.jpg");
   background-size: cover;
   bottom: 0;
+  right: 100;
+
 }
 
 .Game-Space {
