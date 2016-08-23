@@ -1,3 +1,379 @@
+body {
+  text-align: center;
+  background-color: #fff;
+}
+
+main {
+  width: 100%;
+}
+
+h1 {
+  font-family: 'NewUnicodeFont', sans-serif;
+  letter-spacing: 15px;
+  font-size: 100px;
+  margin: 0px;
+  color: #0C0C0C;
+}
+
+h2 {
+  font-size: 24px;
+  color: #0C0C0C;
+  font-family:'Waiting for the Sunrise', cursive;
+}
+
+img {
+ margin-left: 73px;
+ margin-top: 130px;
+ height: 500px;
+ display: inline-block;
+ float: left;
+}
+
+button {
+  margin-right: 300px;
+  background: none;
+  font-size: 40px;
+  width: 226px;
+  font-family: 'NewUnicodeFont', sans-serif;
+  border: none;
+  transform: scale(1:2);
+}
+
+button:active {
+  background: #C20022;
+  border-color: #f2f2f2;
+  border-radius: 10px;
+}
+
+ul {
+ background-image: url("../No-Graffiti.gif");
+ background-size: contain;
+ width: 129px;
+ height: 250px;
+ border-radius: 25px;
+ list-style: none;
+ margin-right: 75px;
+ margin-top: -175px;
+ float: right;
+ box-shadow: 10px 10px 10px 0 black;
+ transform: rotate(10deg);
+}
+
+li {
+  margin-top: 140px;
+  margin-right: 110px;
+  font-size: 40px;
+  font-family: 'NewUnicodeFont', sans-serif;
+  color: #0C0C0C;
+  height: 100px;
+}
+
+.balloon {
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  background-image: url("../Hearts.png");
+  background-size: 150px 150px;
+  background-repeat: no-repeat;
+  bottom: 0;
+  left: 0;
+}
+
+.game-space {
+  width: 860px;
+  height: 600px;
+  overflow: hidden;
+  /* float: right; */
+  margin-top: -600px;
+  margin-left: 68px;
+  border-radius: 5px;
+  cursor: url('../Spray.png'),auto;
+  background-image: url("../021_contornto.jpg");
+  background-size: cover;
+  display: inline-block;
+  bottom: 0;
+  right: 260px;
+  top: 675px;
+}
+}
+
+.game-over {
+  width: 100%;
+  height: 1px;
+  bottom: 470px;
+}
+
+#love {
+  color: #C20022;
+  letter-spacing: 30px;
+}
+
+
+
+
+var speeds           = [400,300,500,400];
+var widths           = [10, 200, 300, 75];
+var playerScore;
+var $gameSpaceHeight = $(".game-space").height.val;
+var $balloonHeight   = $(".balloon").height.val;
+var $width           = $(".game-space").width.val;
+var balloonInterval, animateBaloonInterval, endGameInterval;
+
+
+$(start);
+
+function start() {
+ $("button").click(startGame)
+}
+
+function enterName(startGame) {
+  $("button").click()
+}
+
+function startGame() {
+  playerScore      = 0;
+  $(".game-space").html('<div class="game-over"></div>');
+  balloonInterval = setInterval(function() {
+    createballoon();
+    balloonClick();
+  }, 3000);
+
+  function balloonClick() {
+    $(".balloon").click(function() {
+      $(this).remove();
+      playerScore++;
+      $("#playerCurrentScore").html(playerScore);
+      // new Audio("../Pop.wav").play()
+    })
+  }
+};
+
+function createballoon() {
+  var randPosition = Math.floor(Math.random() * (00 - 0 + 1) + 0);
+  $('<div class="balloon"></div>')
+  .appendTo('.game-space')
+  .css('left', randPosition + "px")
+  
+  animateballoon($('.balloon'))
+}
+
+function animateballoon(balloon) {
+  var speed = speeds[Math.floor(Math.random()*speeds.length)];   
+  
+  animateBalloonInterval = setInterval(function() {
+    var speed  = playerScore+1;
+    balloon.animate({
+      bottom: '+='+$(window).height()+'px',
+    }, 20000 / speed, 'linear')
+  }, 200);
+
+  endGameInterval = setInterval(function() {
+    checkForEndGame(balloon)
+  }, 500);
+}
+
+function checkForEndGame(balloon) {
+  var topInt = parseInt($(balloon).css('top'), 10);
+  if (topInt < 0) {
+    $(".game-space").html("Game-Over! " + playerScore).css({
+      "font-size": "100px",
+      "letter-spacing": "15px", 
+      "font-family": "NewUnicodeFont, sans-serif",
+      "text-align": "center"
+    });
+
+    balloonInterval       = clearInterval(balloonInterval);
+    animateBalloonInterval = clearInterval(animateBalloonInterval);
+    endGameInterval       = clearInterval(endGameInterval);
+    $("#playerCurrentScore").html("");
+    return;
+  }   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  text-align: center;
+  background-image: url("../Concrete.jpg");
+  background-size: cover;
+}
+
+h1 {
+  font-family: 'NewUnicodeFont', sans-serif;
+  letter-spacing: 15px;
+  font-size: 100px;
+  margin: 0px;
+  color: #0C0C0C;
+}
+
+h2 {
+  font-size: 24px;
+  color: #0C0C0C;
+  font-family: 'Concert One', cursive;
+}
+
+img {
+ margin-left: 100px;
+ margin-top: -60px;
+ height: 500px;
+ float: left;
+ padding: 0;
+ z-index: -1;
+ border: 0;
+ display: inline;
+}
+
+button {
+  margin-right: 300px;
+  background: none;
+  font-size: 40px;
+  width: 226px;
+  font-family: 'NewUnicodeFont', sans-serif;
+  border: none;
+  transform: scale(1:2);
+}
+
+button:active {
+  background: #C20022;
+  border: none;
+  border-radius: 10px;
+}
+
+ul {
+ background-image: url("../No-Graffiti.gif");
+ background-size: contain;
+ width: 129px;
+ height: 250px;
+ border-radius: 25px;
+ list-style: none;
+ margin-right: 75px;
+ margin-top: -175px;
+ float: right;
+ box-shadow: 10px 10px 10px 0 black;
+ transform: rotate(10deg);
+}
+
+li {
+  margin-top: 140px;
+  margin-right: 110px;
+  font-size: 40px;
+  font-family: 'NewUnicodeFont', sans-serif;
+  color: #0C0C0C;
+  height: 100px;
+}
+
+.Balloon {
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  background-image: url("../Hearts.png");
+  background-size: 150px 150px;
+  background-repeat: no-repeat;
+  bottom: 0;
+  left: 0;
+}
+
+.Game-Space {
+ position: relative;
+ width: 860px;
+ height: 600px;
+ overflow: hidden;
+ float: right;
+ margin-top: -375px;
+ margin-right: 275px;
+ z-index: +1;
+ border-top: 10px solid #0C0C0C;
+ border-radius: 5px;
+ cursor:url('../Spray.png'),auto;
+ cursor-size: 5px;
+}
+
+.game-over {
+  width: 100%;
+  height: 1px;
+  bottom: 470px;
+}
+
+#love {
+  color: #C20022;
+  letter-spacing: 30px;
+}
+
+@media only screen and (max-width: 960px) {  
+  body {
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  img {
+    display: block;
+    height: 10px;
+    width: 10px;
+  }
+
+  .Game-Space {
+    width: 80%;
+    display: block;
+  }
+
+  @media only screen and (max-width: 640px) {
+  }
+
+  @media only screen and (max-width: 360px) {
+  }
+
+
+
+
+
+
+
+
+
+
+
 var speeds = [400,300,500,400];
 var widths = [10, 200, 300, 75];
 var playerScore = 0;

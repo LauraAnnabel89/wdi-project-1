@@ -1,7 +1,10 @@
 body {
   text-align: center;
-  background-image: url("../Concrete.jpg");
-  background-size: cover;
+  background-color: #fff;
+}
+
+main {
+  width: 100%;
 }
 
 h1 {
@@ -15,18 +18,15 @@ h1 {
 h2 {
   font-size: 24px;
   color: #0C0C0C;
-  font-family: 'Concert One', cursive;
+  font-family:'Waiting for the Sunrise', cursive;
 }
 
 img {
- margin-left: 100px;
- margin-top: -60px;
+ margin-left: 73px;
+ margin-top: 130px;
  height: 500px;
+ display: inline-block;
  float: left;
- padding: 0;
- z-index: -1;
- border: 0;
- display: inline;
 }
 
 button {
@@ -41,7 +41,7 @@ button {
 
 button:active {
   background: #C20022;
-  border: none;
+  border-color: #f2f2f2;
   border-radius: 10px;
 }
 
@@ -80,18 +80,20 @@ li {
 }
 
 .game-space {
- position: relative;
- width: 860px;
- height: 600px;
- overflow: hidden;
- float: right;
- margin-top: -375px;
- margin-right: 275px;
- z-index: +1;
- border-top: 10px solid #0C0C0C;
- border-radius: 5px;
- cursor:url('../Spray.png'),auto;
- cursor-size: 5px;
+width: 860px;
+height: 600px;
+overflow: hidden;
+/* float: right; */
+margin-top: -600px;
+margin-left: 68px;
+border-radius: 5px;
+cursor: url('../Spray.png'),auto;
+background-image: url("../021_contornto.jpg");
+background-size: cover;
+/* display: inline-block; */
+bottom: 0;
+/* right: 264px; */
+/* top: 675px; */
 }
 
 .game-over {
@@ -104,29 +106,3 @@ li {
   color: #C20022;
   letter-spacing: 30px;
 }
-
-@media only screen and (max-width: 960px) {  
-  body {
-    margin: 0 auto;
-  }
-
-  h1 {
-    font-size: 30px;
-  }
-
-  img {
-    display: block;
-    height: 10px;
-    width: 10px;
-  }
-
-  .Game-Space {
-    width: 80%;
-    display: block;
-  }
-
-  @media only screen and (max-width: 640px) {
-  }
-
-  @media only screen and (max-width: 360px) {
-  }
