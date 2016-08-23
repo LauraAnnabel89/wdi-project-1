@@ -22,11 +22,10 @@ h2 {
 }
 
 img {
- margin-left: 73px;
- margin-top: 130px;
- height: 500px;
- display: inline-block;
- float: left;
+  margin-left: 73px;
+  margin-top: 0px;
+  height: 533px;
+  float: left;
 }
 
 button {
@@ -80,20 +79,17 @@ li {
 }
 
 .game-space {
-width: 860px;
-height: 600px;
-overflow: hidden;
-/* float: right; */
-margin-top: -600px;
-margin-left: 68px;
-border-radius: 5px;
-cursor: url('../Spray.png'),auto;
-background-image: url("../021_contornto.jpg");
-background-size: cover;
-/* display: inline-block; */
-bottom: 0;
-/* right: 264px; */
-/* top: 675px; */
+  width: 860px;
+  height: 600px;
+  float: right;
+  margin-top: -560px;
+  margin-right: 290px;
+  border-radius: 5px;
+  cursor: url('../Spray.png'),auto;
+  background-image: url("../021_contornto.jpg");
+  background-size: cover;
+  clear: both
+  overflow: hidden;
 }
 
 .game-over {

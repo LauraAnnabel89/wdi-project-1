@@ -36,10 +36,10 @@ function startGame() {
 };
 
 function createballoon() {
-  var randPosition = Math.floor(Math.random() * (00 - 0 + 1) + 0);
+  var randPosition = Math.floor(Math.random() * (800 - 0 + 10) + 10);
   $('<div class="balloon"></div>')
   .appendTo('.game-space')
-  .css('right', randPosition + "px")
+  .css('left', randPosition + "px")
   
   animateballoon($('.balloon'))
 }
@@ -50,8 +50,8 @@ function animateballoon(balloon) {
   animateBalloonInterval = setInterval(function() {
     var speed  = playerScore+1;
     balloon.animate({
-      bottom: '+='+$(window).height()+'px',
-    }, 50000 / speed, 'linear')
+      bottom: '+='+$(window).width()+'px',
+    }, 10000 / speed, 'linear')
   }, 200);
 
   endGameInterval = setInterval(function() {
