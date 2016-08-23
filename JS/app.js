@@ -32,7 +32,7 @@ function startGame() {
 };
 
 function createBalloon() {
-  var randPosition = Math.floor(Math.random() * (800 - 0 + 1) + 0);
+  var randPosition = Math.floor(Math.random() * (600 - 0 + 1) + 0);
   $('<div class="Balloon"></div>')
   .appendTo('.Game-Space')
   .css('left', randPosition + "px")
@@ -53,7 +53,8 @@ function animateBalloon(balloon) {
 function checkForEndGame(balloon) {
   var topInt = parseInt($(balloon).css('top'), 10);
   if (topInt < 0) {
-    return $(".Game-Space").html("Game-Over!");
+    return $(".Game-Space").html("Game-Over!" + playerScore);
+    startGame === false;
   }   
  }
 

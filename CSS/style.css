@@ -13,9 +13,9 @@ h1 {
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 24px;
   color: #0C0C0C;
-  font-family: sans-serif;
+  font-family: 'Concert One', cursive;
 }
 
 img {
@@ -32,11 +32,11 @@ img {
 button {
   margin-right: 300px;
   background: none;
-  font-size: 30px;
+  font-size: 40px;
   width: 226px;
   font-family: 'NewUnicodeFont', sans-serif;
   border: none;
-  transform: scale(1:3);
+  transform: scale(1:2);
 }
 
 button:active {
@@ -60,10 +60,9 @@ ul {
 }
 
 li {
-  margin: 0px;
   margin-top: 140px;
   margin-right: 110px;
-  font-size: 50px;
+  font-size: 40px;
   font-family: 'NewUnicodeFont', sans-serif;
   color: #0C0C0C;
   height: 100px;
@@ -87,11 +86,11 @@ li {
  overflow: hidden;
  float: right;
  margin-top: -375px;
- margin-right: 250px;
+ margin-right: 275px;
  z-index: +1;
  border-top: 10px solid #0C0C0C;
  border-radius: 5px;
- cursor:url('../rsz_2spray.png'),auto;
+ cursor:url('../Spray.png'),auto;
  cursor-size: 5px;
 }
 
