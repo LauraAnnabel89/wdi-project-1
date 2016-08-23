@@ -51,7 +51,7 @@ ul {
 }
 
 li {
-  margin-top: 200px;
+  margin-top: 150px;
   margin-right: 110px;
   font-size: 40px;
   font-family: 'NewUnicodeFont', sans-serif;
@@ -118,11 +118,12 @@ footer {
 #love {
   color: #C20022;
   letter-spacing: 30px;
+  unicode-bidi:bidi-override;
+  direction: rtl;
+  margin-right:20px;
+  margin-left: -15px;
 }
 
-#R {
-  letter-spacing: 20px;
-}
 
 #CCTV {
   height: 150px;
