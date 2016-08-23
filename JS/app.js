@@ -7,6 +7,7 @@ var $width = $(".Game-Space").width.val
 
 $(start);
 
+
 alert("Welcome to the game, you lil' heartbreaker! Enter your name and click start!");
 
 function start() {
@@ -15,8 +16,8 @@ function start() {
 
 function enterName(startGame) {
   $("button").click()
-  var $playerName = $("input[name=playerName]").val();
-  $("#playerNameDisplay").append($playerName);
+  // var $playerName = $("input[name=playerName]").val();
+  // $("#playerNameDisplay").append($playerName);
 }
 
 function startGame() {
@@ -32,7 +33,7 @@ function startGame() {
       $(this).remove();
       playerScore++;
       $("#playerCurrentScore").html(playerScore);
-      new Audio("/JS/Pop.wav").play()
+      new Audio("../Pop.wav").play()
     })
   }
 
@@ -72,7 +73,7 @@ function checkForEndGame(balloon) {
   if (topInt === 0) {
       // alert("Game-Over");
       // playerScore = 0
-    console.log(playerScore)
+      console.log(playerScore)
 
     } 
 // if topInt is below 0px --> Game over
@@ -83,33 +84,21 @@ if (topInt < 0) {
 function increaseSpeed () {
   var playerScore = 0;
   var $balloonSpeed = $(".Balloon").animate({bottom: '+=20px'})
-
   switch (balloonSpeed) { 
-    case (playerScore > 1): 
-    $balloonSpeed * 10
+    case (playerScore > 10): 
+    $balloonSpeed * 2
     break; 
     case (playerScore > 20): 
-    $(".Balloon").animate({bottom: '+=60px'})
+    $balloonSpeed * 5
     break; 
-    case (playerScore > 30): 
-    $(".Balloon").animate({bottom: '+=80px'})
+    case (playerScore > 50): 
+    $balloonSpeed * 10
     break; 
-    case (playerScore > 40): 
-    $(".Balloon").animate({bottom: '+=100px'})
+    case (playerScore > 100): 
+    $balloonSpeed * 50
   }
 }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

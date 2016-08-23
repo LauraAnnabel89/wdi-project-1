@@ -4,19 +4,65 @@ body {
   background-size: cover;
 }
 h1 {
-  font-family: 'Black Ops One', cursive;
+  font-family: 'NewUnicodeFont', sans-serif;
+  letter-spacing: 15px;
+  font-size: 100px;
+  margin: 0px;
 }
+
+h2 {
+  font-size: 20px;
+  color: black;
+}
+
 img {
- margin-left: 210px;
- margin-top: 90px;
+ margin-left: 100px;
+ margin-top: -60px;
  height: 500px;
  float: left;
  padding: 0;
+ z-index: -1;
+ border: 0;
 }
 
-table {
-  margin: 0 auto;
+button {
+  margin-right: 300px;
+  background: none;
+  font-size: 30px;
+  width: 226px;
+  font-family: 'NewUnicodeFont', sans-serif;
+  border: none;
+  transform: scale(1:3);
 }
+
+button:active {
+  background: red;
+  border: none;
+}
+
+ul {
+ background-image: url("../No-Graffiti.gif");
+ background-size: contain;
+ width: 129px;
+ height: 250px;
+ border-radius: 25px;
+ list-style: none;
+ margin-right: 75px;
+ margin-top: -175px;
+ float: right;
+ box-shadow: 10px 10px 10px 0 black;
+ transform: rotate(10deg);
+}
+
+li {
+  margin: 0px;
+  margin-top: 140px;
+  margin-right: 110px;
+  font-size: 50px;
+  font-family: 'NewUnicodeFont', sans-serif;
+  height: 100px;
+}
+
 .Balloon {
   height: 150px;
   width: 150px;
@@ -30,15 +76,24 @@ table {
 
 .Game-Space {
   position: relative;
-  width: 1000px;
+  width: 900px;
   height: 600px;
   overflow: hidden;
   float: right;
-  margin-top: -556px;
+  margin-top: -375px;
+  margin-right: 220px;
+  z-index: -1;
+  border-top: 10px solid black;
 }
 
-  .game-over {
-    width: 100%;
-    height: 1px;
-    bottom: 470px;
-  }
+.game-over {
+  width: 100%;
+  height: 1px;
+  bottom: 470px;
+}
+
+#love {
+  color: #CF0000;
+  letter-spacing: 30px;
+}
+
