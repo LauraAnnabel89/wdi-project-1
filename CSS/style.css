@@ -68,7 +68,7 @@ li {
   height: 100px;
 }
 
-.Balloon {
+.balloon {
   height: 150px;
   width: 150px;
   position: absolute;
@@ -79,7 +79,7 @@ li {
   left: 0;
 }
 
-.Game-Space {
+.game-space {
  position: relative;
  width: 860px;
  height: 600px;

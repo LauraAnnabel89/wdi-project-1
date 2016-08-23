@@ -1,9 +1,11 @@
-var speeds = [400,300,500,400];
-var widths = [10, 200, 300, 75];
-var playerScore = 0;
-var $gameSpaceHeight = $(".Game-Space").height.val
-var $balloonHeight = $(".Balloon").height.val
-var $width = $(".Game-Space").width.val
+var speeds           = [400,300,500,400];
+var widths           = [10, 200, 300, 75];
+var playerScore;
+var $gameSpaceHeight = $(".game-space").height.val;
+var $balloonHeight   = $(".balloon").height.val;
+var $width           = $(".game-space").width.val;
+var balloonInterval, animateBaloonInterval, endGameInterval;
+
 
 $(start);
 
@@ -16,13 +18,15 @@ function enterName(startGame) {
 }
 
 function startGame() {
-  setInterval(function() {
-    createBalloon();
+  playerScore      = 0;
+  $(".game-space").html('<div class="game-over"></div>');
+  balloonInterval = setInterval(function() {
+    createballoon();
     balloonClick();
   }, 3000);
 
   function balloonClick() {
-    $(".Balloon").click(function() {
+    $(".balloon").click(function() {
       $(this).remove();
       playerScore++;
       $("#playerCurrentScore").html(playerScore);
@@ -31,21 +35,26 @@ function startGame() {
   }
 };
 
-function createBalloon() {
+function createballoon() {
   var randPosition = Math.floor(Math.random() * (600 - 0 + 1) + 0);
-  $('<div class="Balloon"></div>')
-  .appendTo('.Game-Space')
+  $('<div class="balloon"></div>')
+  .appendTo('.game-space')
   .css('left', randPosition + "px")
-  animateBalloon($('.Balloon'))
+  
+  animateballoon($('.balloon'))
 }
 
-function animateBalloon(balloon) {
+function animateballoon(balloon) {
   var speed = speeds[Math.floor(Math.random()*speeds.length)];   
-  setInterval(function() {
-    balloon.animate({bottom: '+=20px'})
+  
+  animateBalloonInterval = setInterval(function() {
+    var speed  = playerScore+1;
+    balloon.animate({
+      bottom: '+='+$(window).height()+'px',
+    }, 10000 / speed, 'linear')
   }, 100);
 
-  setInterval(function() {
+  endGameInterval = setInterval(function() {
     checkForEndGame(balloon)
   }, 500);
 }
@@ -53,32 +62,15 @@ function animateBalloon(balloon) {
 function checkForEndGame(balloon) {
   var topInt = parseInt($(balloon).css('top'), 10);
   if (topInt < 0) {
-    return $(".Game-Space").html("Game-Over!" + playerScore);
-    startGame === false;
+    $(".game-space").html("Game-Over! " + playerScore).css({
+      "font-size": "100px",
+      "letter-spacing": "15px", 
+      "font-family": "NewUnicodeFont, sans-serif",
+    });
+
+    balloonInterval       = clearInterval(balloonInterval);
+    animateBalloonInterval = clearInterval(animateBalloonInterval);
+    endGameInterval       = clearInterval(endGameInterval);
+    return;
   }   
- }
-
-function increaseSpeed () {
-  var playerScore = 0;
-  var $balloonSpeed = $(".Balloon").animate({bottom: '+=20px'})
-  switch (balloonSpeed) { 
-    case (playerScore > 10): 
-    $balloonSpeed * 2
-    break; 
-    case (playerScore > 20): 
-    $balloonSpeed * 5
-    break; 
-    case (playerScore > 50): 
-    $balloonSpeed * 10
-    break; 
-    case (playerScore > 100): 
-    $balloonSpeed * 50
-  }
 }
-
-
-
-
-
-
-
