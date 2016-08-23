@@ -7,26 +7,19 @@ var $width = $(".Game-Space").width.val
 
 $(start);
 
-
-alert("Welcome to the game, you lil' heartbreaker! Enter your name and click start!");
-
 function start() {
  $("button").click(startGame)
 }
 
 function enterName(startGame) {
   $("button").click()
-  // var $playerName = $("input[name=playerName]").val();
-  // $("#playerNameDisplay").append($playerName);
 }
 
 function startGame() {
-  // createBalloon();
   setInterval(function() {
     createBalloon();
     balloonClick();
-  }, 5000);
-
+  }, 1000);
 
   function balloonClick() {
     $(".Balloon").click(function() {
@@ -35,14 +28,6 @@ function startGame() {
       $("#playerCurrentScore").html(playerScore);
       new Audio("../Pop.wav").play()
     })
-  }
-
-  function stopGame () {
-   if (balloonHeight > gameSpaceHeight) {
-    function exitGame () {
-      alert("Game Over")
-      playerScore = 0;
-    }
   }
 };
 
@@ -75,13 +60,12 @@ function checkForEndGame(balloon) {
       // playerScore = 0
       console.log(playerScore)
 
-    } 
-// if topInt is below 0px --> Game over
-if (topInt < 0) {
- alert("Game Over");    
-}
-}
-function increaseSpeed () {
+    } // if topInt is below 0px --> Game over
+    if (topInt < 0) {
+     alert("Game Over");    
+   }
+ }
+ function increaseSpeed () {
   var playerScore = 0;
   var $balloonSpeed = $(".Balloon").animate({bottom: '+=20px'})
   switch (balloonSpeed) { 
@@ -98,7 +82,7 @@ function increaseSpeed () {
     $balloonSpeed * 50
   }
 }
-}
+
 
 
 

@@ -8,11 +8,13 @@ h1 {
   letter-spacing: 15px;
   font-size: 100px;
   margin: 0px;
+  color: #0C0C0C;
 }
 
 h2 {
-  font-size: 20px;
-  color: black;
+  font-size: 18px;
+  color: #0C0C0C;
+  font-family: sans-serif;
 }
 
 img {
@@ -36,8 +38,9 @@ button {
 }
 
 button:active {
-  background: red;
+  background: #C20022;
   border: none;
+  border-radius: 10px;
 }
 
 ul {
@@ -60,6 +63,7 @@ li {
   margin-right: 110px;
   font-size: 50px;
   font-family: 'NewUnicodeFont', sans-serif;
+  color: #0C0C0C;
   height: 100px;
 }
 
@@ -75,15 +79,16 @@ li {
 }
 
 .Game-Space {
-  position: relative;
-  width: 900px;
-  height: 600px;
-  overflow: hidden;
-  float: right;
-  margin-top: -375px;
-  margin-right: 220px;
-  z-index: -1;
-  border-top: 10px solid black;
+ position: relative;
+ width: 860px;
+ height: 600px;
+ overflow: hidden;
+ float: right;
+ margin-top: -375px;
+ margin-right: 250px;
+ z-index: +1;
+ border-top: 5px solid #0C0C0C;
+ border-radius: 10px;
 }
 
 .game-over {
@@ -93,7 +98,7 @@ li {
 }
 
 #love {
-  color: #CF0000;
+  color: #C20022;
   letter-spacing: 30px;
 }
 
