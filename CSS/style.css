@@ -3,10 +3,6 @@ body {
   background-color: #fff;
 }
 
-main {
-  width: 100%;
-}
-
 h1 {
   font-family: 'NewUnicodeFont', sans-serif;
   letter-spacing: 15px;
@@ -18,14 +14,18 @@ h1 {
 h2 {
   font-size: 24px;
   color: #0C0C0C;
-  font-family:'Waiting for the Sunrise', cursive;
+  font-family: 'Concert One', cursive;
 }
 
 img {
-  margin-left: 73px;
-  margin-top: 0px;
-  height: 533px;
-  float: left;
+ margin-left: 100px;
+ margin-top: -60px;
+ height: 500px;
+ float: left;
+ padding: 0;
+ z-index: -1;
+ border: 0;
+ display: inline;
 }
 
 button {
@@ -40,22 +40,22 @@ button {
 
 button:active {
   background: #C20022;
-  border-color: #f2f2f2;
+  border: none;
   border-radius: 10px;
 }
 
 ul {
- background-image: url("../No-Graffiti.gif");
- background-size: contain;
- width: 129px;
- height: 250px;
- border-radius: 25px;
- list-style: none;
- margin-right: 75px;
- margin-top: -175px;
- float: right;
- box-shadow: 10px 10px 10px 0 black;
- transform: rotate(10deg);
+  background-image: url("../No-Graffiti.gif");
+  background-size: contain;
+  width: 129px;
+  height: 250px;
+  border-radius: 25px;
+  list-style: none;
+  margin-left: 50px;
+  margin-top: -175px;
+  float: left;
+  box-shadow: 10px 10px 10px 0 black;
+  transform: rotate(-10deg);
 }
 
 li {
@@ -79,17 +79,19 @@ li {
 }
 
 .game-space {
-  width: 860px;
-  height: 600px;
-  float: right;
-  margin-top: -560px;
-  margin-right: 290px;
-  border-radius: 5px;
-  cursor: url('../Spray.png'),auto;
-  background-image: url("../021_contornto.jpg");
-  background-size: cover;
-  clear: both
-  overflow: hidden;
+ position: relative;
+ width: 860px;
+ height: 600px;
+ overflow: hidden;
+ float: right;
+ margin-top: -375px;
+ margin-right: 275px;
+ z-index: +1;
+ border: 5px solid #0C0C0C;
+ border-radius: 5px;
+ cursor:url('../Spray.png'),auto;
+ cursor-size: 5px;
+ background-image: url("../021_contornto.jpg");
 }
 
 .game-over {
@@ -101,4 +103,10 @@ li {
 #love {
   color: #C20022;
   letter-spacing: 30px;
+}
+
+#CCTV {
+  height: 110px;
+  float: right;
+  margin-top: -210px;
 }

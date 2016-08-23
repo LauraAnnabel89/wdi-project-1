@@ -36,7 +36,7 @@ function startGame() {
 };
 
 function createballoon() {
-  var randPosition = Math.floor(Math.random() * (800 - 0 + 10) + 10);
+  var randPosition = Math.floor(Math.random() * (600 - 0 + 1) + 0);
   $('<div class="balloon"></div>')
   .appendTo('.game-space')
   .css('left', randPosition + "px")
@@ -50,9 +50,9 @@ function animateballoon(balloon) {
   animateBalloonInterval = setInterval(function() {
     var speed  = playerScore+1;
     balloon.animate({
-      bottom: '+='+$(window).width()+'px',
+      bottom: '+='+$(window).height()+'px',
     }, 10000 / speed, 'linear')
-  }, 200);
+  }, 100);
 
   endGameInterval = setInterval(function() {
     checkForEndGame(balloon)
@@ -66,13 +66,11 @@ function checkForEndGame(balloon) {
       "font-size": "100px",
       "letter-spacing": "15px", 
       "font-family": "NewUnicodeFont, sans-serif",
-      "text-align": "center"
     });
 
     balloonInterval       = clearInterval(balloonInterval);
     animateBalloonInterval = clearInterval(animateBalloonInterval);
     endGameInterval       = clearInterval(endGameInterval);
-    $("#playerCurrentScore").html("");
     return;
   }   
 }
