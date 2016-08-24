@@ -12,9 +12,6 @@ function start() {
  $("button").click(startGame)
 }
 
-function enterName(startGame) {
-  $("button").click()
-}
 
 function startGame() {
   playerScore      = 0;
@@ -29,7 +26,6 @@ function startGame() {
       $(this).remove();
       playerScore++;
       $("#playerCurrentScore").html(playerScore);
-      $("audio")new audio.play()
     })
   }
 };
