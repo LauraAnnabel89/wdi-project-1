@@ -29,6 +29,7 @@ function startGame() {
       $(this).remove();
       playerScore++;
       $("#playerCurrentScore").html(playerScore);
+      $("audio")new audio.play()
     })
   }
 };
