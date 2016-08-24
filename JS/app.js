@@ -3,7 +3,6 @@ var widths           = [10, 200, 300, 75];
 var playerScore;
 var $gameSpaceHeight = $(".game-space").height.val;
 var $balloonHeight   = $(".balloon").height.val;
-var $width           = $(".game-space").width.val;
 var balloonInterval, animateBaloonInterval, endGameInterval;
 
 
@@ -30,7 +29,6 @@ function startGame() {
       $(this).remove();
       playerScore++;
       $("#playerCurrentScore").html(playerScore);
-      // new Audio("../Pop.wav").play()
     })
   }
 };

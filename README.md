@@ -33,3 +33,5 @@ The main challenges came from randomising the location of the balloons when bein
 
 It was also really tricky to work out the end of game logic, I was inspired by the logic of Tetris, and fellow students games to create a game-stop div, hidden at the top then using .css to work out how far this would need to reach in order to generate a game over function. It was then also tricky to get the game to reset, however this was achieved my resetting all functions that were involved in creating, animating and scoring play with the balloon.
 
+Some CSS problems when it came to making the site mobile responsive - as the position of the elements was so dependent on game play, any adjustments to the main game-space meant that generation of the balloons no longer worked. 
+

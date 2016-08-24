@@ -9,6 +9,7 @@ h1 {
   font-size: 100px;
   margin: 0px;
   color: #0C0C0C;
+  margin-left: 10px;
 }
 
 h2 {
@@ -16,6 +17,7 @@ h2 {
   color: #0C0C0C;
   font-family: 'Nothing You Could Do', cursive;
   margin: 25px;
+  margin-left: 15px;
 }
 
 
@@ -27,6 +29,7 @@ button {
  font-family: 'NewUnicodeFont', sans-serif;
  border: none;
  margin-bottom: 15px;
+ margin-left: 15px;
 }
 
 button:active {
@@ -86,9 +89,7 @@ footer {
   width: 860px;
   height: 600px;
   overflow: hidden;
-  /* float: right; */
-  /* margin-top: 0px; */
-  margin-left: 270px;
+  margin-left: 285px;
   z-index: +1;
   border: 5px solid #0C0C0C;
   border-radius: 5px;
