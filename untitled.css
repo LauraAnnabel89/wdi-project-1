@@ -1,0 +1,35 @@
+
+
+
+button {
+ margin-right: 480px;
+ background: none;
+ font-size: 40px;
+ width: 226px;
+ font-family: 'NewUnicodeFont', sans-serif;
+ border: none;
+ margin-bottom: 15px;
+ margin-left: 15px;
+}
+
+button:active {
+  background: #C20022;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+
+
+
+
+
+#love {
+  color: #C20022;
+  letter-spacing: 30px;
+  unicode-bidi:bidi-override;
+  direction: rtl;
+  margin-right:20px;
+  margin-left: -15px;
+}
+
+
